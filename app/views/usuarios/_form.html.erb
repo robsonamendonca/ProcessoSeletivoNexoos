@@ -1,0 +1,28 @@
+
+<%= form_with(model: usuario, local: true) do |form| %>
+  <% if usuario.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(usuario.errors.count, "error") %> proibiu este usuario de ser salvo:</h2>
+
+      <ul>
+      <% usuario.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label 'Nome' %>
+    <%= form.text_field :name , class: "form-control" , autofocus: true %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label 'Telefone' %>
+    <%= form.text_field :phone, class: "form-control" , autocomplete: "off" %>
+  </div>
+
+  <div class="actions">   
+      <%= form.submit class: 'btn btn-default' %>
+  </div>
+<% end %>
