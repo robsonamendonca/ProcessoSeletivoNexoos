@@ -13,6 +13,11 @@ end
 group :production do
   gem 'pg'
 end
+
+group :production do
+  gem 'mini_racer'
+end
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
